@@ -11,6 +11,7 @@ namespace ReflectionExample
     {
         static void Main(string[] args)
         {
+            //Type T = typeof(Student);
             Type T = Type.GetType("ReflectionExample.Student");
 
             Console.WriteLine("Class Name = {0}", T.Name);
@@ -37,7 +38,18 @@ namespace ReflectionExample
             {
                 Console.WriteLine(property.Name + " and it's type is: " + property.PropertyType.Name);
             }
-            
+
+            Console.WriteLine();
+
+            Console.WriteLine("Constructors in Student Class");
+
+            ConstructorInfo[] constructors = T.GetConstructors();
+
+            foreach (ConstructorInfo constructor in constructors)
+            {
+                Console.WriteLine(constructor.ToString());
+            }
+
             Console.ReadKey();
         }
     }

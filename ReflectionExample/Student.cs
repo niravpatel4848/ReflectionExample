@@ -10,7 +10,12 @@ namespace ReflectionExample
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        
+
+        public Student(int ID, string Name)
+        {
+            this.Id = ID;
+            this.Name = Name;
+        }
         public void GetId()
         {
             Console.WriteLine("ID = {0}", this.Id);
